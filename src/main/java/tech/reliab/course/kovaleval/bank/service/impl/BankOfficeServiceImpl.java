@@ -4,9 +4,28 @@
 package tech.reliab.course.kovaleval.bank.service.impl;
 
 import tech.reliab.course.kovaleval.bank.entity.Bank;
+import tech.reliab.course.kovaleval.bank.entity.BankAtm;
 import tech.reliab.course.kovaleval.bank.entity.BankOffice;
 import tech.reliab.course.kovaleval.bank.service.BankOfficeService;
 public class BankOfficeServiceImpl implements BankOfficeService {
+    /**
+     *
+     * @param id            id of the office
+     * @param name          name of the office
+     * @param address       address of the office
+     * @param status        status of the office (work/not work)
+     * @param placeAtm      can to place an ATM in the office (yes/no)
+     * @param countAtm      number of ATMs in the office (directly depends on the total number
+     *                      <br> of ATMs at the bank)
+     * @param getCredit     can to apply for a credit in the office (yes/no)
+     * @param getMoney      can get money in the office (yes/no)
+     * @param giveMoney     can give money in the office (yes/no)
+     * @param money         the money in the office (directly depends on the "money" field
+     *                      <br> in the "Bank" class)
+     * @param rent          the money needed to rent of office
+     * @param bank          the bank that owns the office
+     * @return              {@link BankOffice}
+     */
     @Override
     public BankOffice createBankOffice(long id, String name, String address,
                                        boolean status, boolean placeAtm, int countAtm,

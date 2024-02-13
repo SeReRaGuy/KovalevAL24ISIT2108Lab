@@ -1,15 +1,28 @@
 package tech.reliab.course.kovaleval.bank.service.impl;
 
-import tech.reliab.course.kovaleval.bank.entity.Bank;
-import tech.reliab.course.kovaleval.bank.entity.CreditAccount;
-import tech.reliab.course.kovaleval.bank.entity.PaymentAccount;
-import tech.reliab.course.kovaleval.bank.entity.User;
+import tech.reliab.course.kovaleval.bank.entity.*;
 import tech.reliab.course.kovaleval.bank.service.CreditAccountService;
 
 import java.time.LocalDate;
 import java.util.Random;
 
 public class CreditAccountServiceImpl implements CreditAccountService {
+    /**
+     *
+     * @param id                id of the credit account
+     * @param user              credit account user
+     * @param dateStart         credit start date
+     * @param dateEnd           credit end date
+     * @param countMoth         the length of the loan in months
+     * @param loanAmount        credit amount
+     * @param monthlyPayment    monthly credit payment
+     * @param interestRate      credit interest rate (it must be equal to the interest rate of the bank
+     *                          <br> where the loan was taken out or lower)
+     * @param issuedEmployee    the employee who issued the credit
+     * @param paymentAccount    the payment account that pays off the credit
+     * @param bank              the bank where the credit was taken
+     * @return                  {@link CreditAccount}
+     */
     @Override
     public CreditAccount createCreditAccount(long id, User user, LocalDate dateStart,
                                              LocalDate dateEnd, int countMoth, long loanAmount,
