@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
                 .build();
         user.setRating(new Random().nextDouble(user.getProfit()/10));
         banks.forEach(bank -> bank.setCountUser(bank.getCountUser() + 1));
-        return null;
+        return user;
     }
 
     @Override

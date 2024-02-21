@@ -47,7 +47,7 @@ public class BankServiceImpl implements BankService {
                 .money(new Random().nextDouble(1000000))
                 .build();
         bank.setInterestRate(Math.max(0,Math.min(20,new Random().nextDouble(20)+(double) bank.getRating()/10)));
-        return null;
+        return bank;
     }
 
     @Override

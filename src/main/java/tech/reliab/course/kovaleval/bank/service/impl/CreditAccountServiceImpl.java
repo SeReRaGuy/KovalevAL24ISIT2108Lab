@@ -15,8 +15,8 @@ public class CreditAccountServiceImpl implements CreditAccountService {
      * @param dateEnd           credit end date
      * @param countMoth         the length of the loan in months
      * @param loanAmount        credit amount
-     * @param monthlyPayment    monthly credit payment
-     * @param interestRate      credit interest rate (it must be equal to the interest rate of the bank
+     * @param monthlyPayment    monthly credit payment <br>
+     *                          credit interest rate (it must be equal to the interest rate of the bank
      *                          <br> where the loan was taken out or lower)
      * @param issuedEmployee    the employee who issued the credit
      * @param paymentAccount    the payment account that pays off the credit
@@ -26,8 +26,8 @@ public class CreditAccountServiceImpl implements CreditAccountService {
     @Override
     public CreditAccount createCreditAccount(long id, User user, LocalDate dateStart,
                                              LocalDate dateEnd, int countMoth, long loanAmount,
-                                             long monthlyPayment, double interestRate,
-                                             String issuedEmployee, PaymentAccount paymentAccount,
+                                             long monthlyPayment,
+                                             Employee issuedEmployee, PaymentAccount paymentAccount,
                                              Bank bank) {
         CreditAccount creditAccount = CreditAccount.builder()
                 .id(id)

@@ -49,7 +49,7 @@ public class BankOfficeServiceImpl implements BankOfficeService {
                 IllegalArgumentException("Такого количества денег нет в банке");
         else bankOffice.setMoney(money);
         bank.setCountOffice(bank.getCountOffice() + 1);
-        return null;
+        return bankOffice;
     }
 
     @Override

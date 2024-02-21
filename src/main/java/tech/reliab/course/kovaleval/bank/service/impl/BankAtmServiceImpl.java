@@ -44,7 +44,7 @@ public class BankAtmServiceImpl implements BankAtmService {
         if (belongBank.getMoney() < money) throw new
                 IllegalArgumentException("Такого количества денег нет в банке");
         else bankAtm.setMoney(money);
-        if (!status.equals("Работает") && !status.equals("Не работает") && !status.equals("Нет денег"))
+        if (!status.equals("Working") && !status.equals("Not working") && !status.equals("No money"))
             throw new IllegalArgumentException("Неверно указан статус");
         else bankAtm.setStatus(status);
         belongBank.setCountAtm(belongBank.getCountAtm()+1);

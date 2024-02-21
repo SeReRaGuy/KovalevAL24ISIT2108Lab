@@ -1,9 +1,6 @@
 package tech.reliab.course.kovaleval.bank.service;
 
-import tech.reliab.course.kovaleval.bank.entity.Bank;
-import tech.reliab.course.kovaleval.bank.entity.CreditAccount;
-import tech.reliab.course.kovaleval.bank.entity.PaymentAccount;
-import tech.reliab.course.kovaleval.bank.entity.User;
+import tech.reliab.course.kovaleval.bank.entity.*;
 
 import java.time.LocalDate;
 
@@ -18,7 +15,6 @@ public interface CreditAccountService {
      * @param countMoth         the length of the loan in months
      * @param loanAmount        credit amount
      * @param monthlyPayment    monthly credit payment
-     * @param interestRate      credit interest rate
      * @param issuedEmployee    the employee who issued the credit
      * @param paymentAccount    the payment account that pays off the credit
      * @param bank              the bank where the credit was taken
@@ -26,7 +22,7 @@ public interface CreditAccountService {
      */
     CreditAccount createCreditAccount(long id, User user, LocalDate dateStart, LocalDate dateEnd,
                                       int countMoth, long loanAmount, long monthlyPayment,
-                                      double interestRate, String issuedEmployee,
+                                      Employee issuedEmployee,
                                       PaymentAccount paymentAccount, Bank bank);
 
     /**

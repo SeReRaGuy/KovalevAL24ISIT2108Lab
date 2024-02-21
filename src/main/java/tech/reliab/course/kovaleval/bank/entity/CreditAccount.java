@@ -22,6 +22,6 @@ public class CreditAccount {
     private long loanAmount;
     private long monthlyPayment;
     private double interestRate;
-    private String issuedEmployee;
+    private Employee issuedEmployee;
     private PaymentAccount paymentAccount;
 }
