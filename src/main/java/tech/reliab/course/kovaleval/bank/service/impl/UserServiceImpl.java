@@ -1,5 +1,6 @@
 package tech.reliab.course.kovaleval.bank.service.impl;
 
+import tech.reliab.course.kovaleval.bank.Main;
 import tech.reliab.course.kovaleval.bank.entity.Bank;
 import tech.reliab.course.kovaleval.bank.entity.BankOffice;
 import tech.reliab.course.kovaleval.bank.entity.User;
@@ -40,12 +41,12 @@ public class UserServiceImpl implements UserService {
                 .middleName(middleName)
                 .dateOfBirth(dateOfBirth)
                 .placeOfWork(placeOfWork)
-                .profit(new Random().nextDouble(9951) + 50)
+                .profit((double) Math.round((new Random().nextDouble(9951) + 50) * 100) /100)
                 .banks(banks)
                 .CreditAccounts(null)
                 .PaymentAccounts(null)
                 .build();
-        user.setRating(new Random().nextDouble(user.getProfit()/10));
+        user.setRating((double) Math.round((new Random().nextDouble(user.getProfit() / 10)) * 100) /100);
         banks.forEach(bank -> bank.setCountUser(bank.getCountUser() + 1));
         return user;
     }

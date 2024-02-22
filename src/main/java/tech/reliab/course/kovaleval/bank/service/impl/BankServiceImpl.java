@@ -4,6 +4,7 @@ import tech.reliab.course.kovaleval.bank.entity.Bank;
 import tech.reliab.course.kovaleval.bank.entity.BankOffice;
 import tech.reliab.course.kovaleval.bank.service.BankService;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class BankServiceImpl implements BankService {
@@ -36,6 +37,7 @@ public class BankServiceImpl implements BankService {
      */
     @Override
     public Bank createBank(long id, String name) {
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
         Bank bank = Bank.builder()
                 .id(id)
                 .name(name)
@@ -44,9 +46,9 @@ public class BankServiceImpl implements BankService {
                 .countEmployee(0)
                 .countUser(0)
                 .rating(new Random().nextInt(101))
-                .money(new Random().nextDouble(1000000))
+                .money((double) Math.round(new Random().nextDouble(1000000)*100)/100)
                 .build();
-        bank.setInterestRate(Math.max(0,Math.min(20,new Random().nextDouble(20)+(double) bank.getRating()/10)));
+        bank.setInterestRate(((double) Math.round(Math.max(0, Math.min(20, new Random().nextDouble(20) + (double) bank.getRating() / 10)) * 100) /100));
         return bank;
     }
 

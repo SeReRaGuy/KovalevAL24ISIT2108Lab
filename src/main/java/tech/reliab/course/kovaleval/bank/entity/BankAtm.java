@@ -3,12 +3,10 @@ package tech.reliab.course.kovaleval.bank.entity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
 @Builder
-@ToString
 public class BankAtm {
     private long id;
     private String name;
@@ -21,4 +19,20 @@ public class BankAtm {
     private boolean giveMoney;
     private double money;
     private double serviceMoney;
+
+    @Override
+    public String toString()
+    {
+        return "Id банкомата: " + id
+                + "\nНазвание банкомата: " + name
+                + "\nАдрес банкомата: " + address
+                + "\nСтатус: " + status
+                + "\nБанк, которому принадлежит (id): " + belongBank.getId()
+                + "\nОфис, которому принадлежит (id): " + belongOffice.getId()
+                + "\nОтветственный сотрудник (id): " + serviceEmployee.getId()
+                + "\nМожет принять деньги: " + getMoney
+                + "\nМожет выдать деньги: " + giveMoney
+                + "\nКол-во денег: " + money
+                + "\nСодержание банкомата: " + serviceMoney;
+    }
 }

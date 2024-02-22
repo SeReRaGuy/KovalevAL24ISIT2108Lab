@@ -38,7 +38,7 @@ public class CreditAccountServiceImpl implements CreditAccountService {
                 .countMoth(countMoth)
                 .loanAmount(loanAmount)
                 .monthlyPayment(monthlyPayment)
-                .interestRate(Math.max(bank.getInterestRate() - new Random().nextDouble(5),0))
+                .interestRate((double) (Math.round(Math.max(bank.getInterestRate() - new Random().nextDouble(5), 0) * 100)) /100)
                 .issuedEmployee(issuedEmployee)
                 .paymentAccount(paymentAccount)
                 .build();

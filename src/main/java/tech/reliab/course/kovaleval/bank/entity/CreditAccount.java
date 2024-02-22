@@ -3,14 +3,12 @@ package tech.reliab.course.kovaleval.bank.entity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.time.LocalDate;
 
 @Getter
 @Setter
 @Builder
-@ToString
 
 public class CreditAccount {
     private long id;
@@ -24,4 +22,20 @@ public class CreditAccount {
     private double interestRate;
     private Employee issuedEmployee;
     private PaymentAccount paymentAccount;
+
+    @Override
+    public String toString()
+    {
+        return "Id кредитного аккаунта: " + id
+                + "\nId клиента: " + user.getId()
+                + "\nНазвание банка: " + bankName
+                + "\nОткрытие счёта: " + dateStart
+                + "\nЗакрытие счёта: " + dateEnd
+                + "\nКоличество месяцев: " + countMoth
+                + "\nСумма кредита: " + loanAmount
+                + "\nЕжемесячный платёж: " + monthlyPayment
+                + "\nПроцентная ставка: " + interestRate
+                + "\nВыдавший сотрудник (id): " + issuedEmployee.getId()
+                + "\nПлатёжный аккаунт: " + paymentAccount;
+    }
 }

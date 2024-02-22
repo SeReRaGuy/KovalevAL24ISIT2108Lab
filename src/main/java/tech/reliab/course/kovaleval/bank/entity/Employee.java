@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Builder
-@ToString
 
 public class Employee {
     private long id;
@@ -24,4 +23,20 @@ public class Employee {
     private BankOffice officeWork;
     private boolean giveCredit;
     private double salary;
+
+    @Override
+    public String toString()
+    {
+        return "Id сотрудника: " + id
+                + "\nИмя сотрудника: " + name
+                + "\nФамилия сотрудника: " + lastName
+                + "\nОтчество сотрудника: " + middleName
+                + "\nДата рождения: " + dateOfBirth
+                + "\nДолжность: " + post
+                + "\nБанк, в котором работает (id): " + bankPost.getId()
+                + "\nРаботает дистанционно: " + distantly
+                + "\nОфис, в котором работает (id): " + officeWork.getId()
+                + "\nМожет выдать кредит: " + giveCredit
+                + "\nЗарплата: " + salary;
+    }
 }
