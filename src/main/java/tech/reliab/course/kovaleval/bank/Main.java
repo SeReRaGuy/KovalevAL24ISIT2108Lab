@@ -30,21 +30,5 @@ public class Main {
         CreditAccount creditAccount = creditAccountService.createCreditAccount(0, user,
                 LocalDate.of(2024,1,1),LocalDate.of(2025,1,1),
                 12,120,10,employee,paymentAccount,bank);
-
-        System.out.println("----------Банки---------");
-        System.out.println(bank);
-        System.out.println("----------Офисы---------");
-        System.out.println(bankOffice);
-        System.out.println("-------Сотрудники-------");
-        System.out.println(employee);
-        System.out.println("--------Банкоматы-------");
-        System.out.println(bankAtm);
-        System.out.println("------Пользователи------");
-        System.out.println(user);
-        System.out.println("---Платёжные аккаунты---");
-        System.out.println(paymentAccount);
-        System.out.println("---Кредитные аккаунты---");
-        System.out.println(creditAccount);
-        System.out.println("------------------------");
     }
 }
