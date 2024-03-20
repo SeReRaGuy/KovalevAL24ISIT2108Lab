@@ -13,12 +13,11 @@ public class BankOffice {
     private String address;
     private boolean status;
     private boolean placeAtm;
-    private int countAtm;
-    private boolean getCredit;
-    private boolean getMoney;
-    private boolean giveMoney;
+    private boolean canIssueCredit;
+    private boolean canAcceptMoney;
+    private boolean canGiveMoney;
     private double money;
-    private double rent;
+    private double rentCost;
 
     @Override
     public String toString()
@@ -28,11 +27,10 @@ public class BankOffice {
                 + "\nАдрес офиса: " + address
                 + "\nСтатус: " + status
                 + "\nМожно разместить банкомат: " + placeAtm
-                + "\nКоличество банкоматов: " + countAtm
-                + "\nМожет выдать кредит: " + getCredit
-                + "\nМожет положить деньги: " + getMoney
-                + "\nМожет выдать деньги: " + giveMoney
+                + "\nМожет выдать кредит: " + canIssueCredit
+                + "\nМожет положить деньги: " + canAcceptMoney
+                + "\nМожет выдать деньги: " + canGiveMoney
                 + "\nКол-во денег: " + money
-                + "\nАренда: " + rent;
+                + "\nАренда: " + rentCost;
     }
 }

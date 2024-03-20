@@ -4,7 +4,6 @@
 package tech.reliab.course.kovaleval.bank.service.impl;
 
 import tech.reliab.course.kovaleval.bank.entity.Bank;
-import tech.reliab.course.kovaleval.bank.entity.BankAtm;
 import tech.reliab.course.kovaleval.bank.entity.BankOffice;
 import tech.reliab.course.kovaleval.bank.service.BankOfficeService;
 public class BankOfficeServiceImpl implements BankOfficeService {
@@ -37,18 +36,11 @@ public class BankOfficeServiceImpl implements BankOfficeService {
                 .address(address)
                 .status(status)
                 .placeAtm(placeAtm)
-                .getCredit(getCredit)
-                .getMoney(getMoney)
-                .giveMoney(giveMoney)
-                .rent(rent)
+                .canIssueCredit(getCredit)
+                .canAcceptMoney(getMoney)
+                .canGiveMoney(giveMoney)
+                .rentCost(rent)
                 .build();
-        if (bank.getCountAtm() < countAtm) throw new
-                IllegalArgumentException("Банк не распоряжается таким количеством банкоматов");
-        else bankOffice.setCountAtm(countAtm);
-        if (bank.getMoney() < money) throw new
-                IllegalArgumentException("Такого количества денег нет в банке");
-        else bankOffice.setMoney(money);
-        bank.setCountOffice(bank.getCountOffice() + 1);
         return bankOffice;
     }
 

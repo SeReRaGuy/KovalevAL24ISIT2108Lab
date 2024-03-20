@@ -17,10 +17,10 @@ public class User {
     private String middleName;
     private LocalDate dateOfBirth;
     private String placeOfWork;
-    private double profit;
+    private double monthlyProfit;
     private List<Bank> banks;
-    private List<CreditAccount> CreditAccounts;
-    private List<PaymentAccount> PaymentAccounts;
+    private List<CreditAccount> creditAccounts;
+    private List<PaymentAccount> paymentAccounts;
     private double rating;
 
     @Override
@@ -32,10 +32,10 @@ public class User {
                 + "\nОтчество клиента: " + middleName
                 + "\nДата рождения клиента: " + dateOfBirth
                 + "\nМесто работы клиента: " + placeOfWork
-                + "\nПрибыль клиента: " + profit
+                + "\nПрибыль клиента: " + monthlyProfit
                 + "\nБанки, которыми пользуется клиент (id): " + getIdFromList(banks)
-                + "\nКредитные аккаунты, которыми пользуется клиент (id): " + getIdFromList(CreditAccounts)
-                + "\nПлатёжные аккаунты, которыми пользуется клиент (id): " + getIdFromList(PaymentAccounts)
+                + "\nКредитные аккаунты, которыми пользуется клиент (id): " + getIdFromList(creditAccounts)
+                + "\nПлатёжные аккаунты, которыми пользуется клиент (id): " + getIdFromList(paymentAccounts)
                 + "\nКредитный рейтинг: " + rating;
     }
 

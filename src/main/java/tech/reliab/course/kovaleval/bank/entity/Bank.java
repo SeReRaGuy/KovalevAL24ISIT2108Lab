@@ -4,16 +4,18 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
 public class Bank {
     private long id;
     private String name;
-    private int countOffice;
-    private int countAtm;
-    private int countEmployee;
-    private int countUser;
+    private List<BankOffice> bankOffices;
+    private List<BankAtm> bankAtms;
+    private List<Employee> employees;
+    private List<User> users;
     private int rating;
     private double money;
     private double interestRate;
@@ -23,7 +25,6 @@ public class Bank {
     {
         return "Id банка: " + id
                 + "\nНазвание банка: " + name
-                + "\nКоличество офисов/банкоматов/сотрудников/пользователей: " + countOffice + '/' + countAtm + '/' + countEmployee + '/' + countUser
                 + "\nРейтинг банка: " + rating
                 + "\nКол-во денег: " + money
                 + "\nПроцентная ставка банка: " + interestRate;

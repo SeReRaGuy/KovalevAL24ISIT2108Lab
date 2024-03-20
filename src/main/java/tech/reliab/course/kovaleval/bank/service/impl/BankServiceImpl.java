@@ -5,6 +5,7 @@ import tech.reliab.course.kovaleval.bank.entity.BankOffice;
 import tech.reliab.course.kovaleval.bank.service.BankService;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class BankServiceImpl implements BankService {
@@ -41,10 +42,10 @@ public class BankServiceImpl implements BankService {
         Bank bank = Bank.builder()
                 .id(id)
                 .name(name)
-                .countOffice(0)
-                .countAtm(0)
-                .countEmployee(0)
-                .countUser(0)
+                .bankOffices(new ArrayList<>())
+                .bankAtms(new ArrayList<>())
+                .employees(new ArrayList<>())
+                .users(new ArrayList<>())
                 .rating(new Random().nextInt(101))
                 .money((double) Math.round(new Random().nextDouble(1000000)*100)/100)
                 .build();

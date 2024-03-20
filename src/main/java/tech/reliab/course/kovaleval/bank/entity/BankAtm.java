@@ -15,10 +15,10 @@ public class BankAtm {
     private Bank belongBank;
     private BankOffice belongOffice;
     private Employee serviceEmployee;
-    private boolean getMoney;
-    private boolean giveMoney;
+    private boolean canAcceptMoney;
+    private boolean canGiveMoney;
     private double money;
-    private double serviceMoney;
+    private double costForMaintenance;
 
     @Override
     public String toString()
@@ -30,9 +30,9 @@ public class BankAtm {
                 + "\nБанк, которому принадлежит (id): " + belongBank.getId()
                 + "\nОфис, которому принадлежит (id): " + belongOffice.getId()
                 + "\nОтветственный сотрудник (id): " + serviceEmployee.getId()
-                + "\nМожет принять деньги: " + getMoney
-                + "\nМожет выдать деньги: " + giveMoney
+                + "\nМожет принять деньги: " + canAcceptMoney
+                + "\nМожет выдать деньги: " + canGiveMoney
                 + "\nКол-во денег: " + money
-                + "\nСодержание банкомата: " + serviceMoney;
+                + "\nСодержание банкомата: " + costForMaintenance;
     }
 }

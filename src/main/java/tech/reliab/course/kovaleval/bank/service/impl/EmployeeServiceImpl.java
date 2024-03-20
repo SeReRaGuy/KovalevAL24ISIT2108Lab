@@ -37,12 +37,11 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .dateOfBirth(dateOfBirth)
                 .post(post)
                 .bankPost(bankPost)
-                .distantly(distantly)
-                .officeWork(officeWork)
-                .giveCredit(giveCredit)
+                .isWorkingDistantly(distantly)
+                .belongOffice(officeWork)
+                .canGiveCredit(giveCredit)
                 .salary(salary)
                 .build();
-        bankPost.setCountEmployee(bankPost.getCountEmployee() + 1);
         return employee;
     }
 

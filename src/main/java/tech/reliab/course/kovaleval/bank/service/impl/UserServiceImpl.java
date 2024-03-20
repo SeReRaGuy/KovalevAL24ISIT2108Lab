@@ -1,12 +1,11 @@
 package tech.reliab.course.kovaleval.bank.service.impl;
 
-import tech.reliab.course.kovaleval.bank.Main;
 import tech.reliab.course.kovaleval.bank.entity.Bank;
-import tech.reliab.course.kovaleval.bank.entity.BankOffice;
 import tech.reliab.course.kovaleval.bank.entity.User;
 import tech.reliab.course.kovaleval.bank.service.UserService;
 //кредитный рейтинг
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -41,13 +40,12 @@ public class UserServiceImpl implements UserService {
                 .middleName(middleName)
                 .dateOfBirth(dateOfBirth)
                 .placeOfWork(placeOfWork)
-                .profit((double) Math.round((new Random().nextDouble(9951) + 50) * 100) /100)
+                .monthlyProfit((double) Math.round((new Random().nextDouble(9951) + 50) * 100) /100)
                 .banks(banks)
-                .CreditAccounts(null)
-                .PaymentAccounts(null)
+                .creditAccounts(new ArrayList<>())
+                .paymentAccounts(new ArrayList<>())
                 .build();
-        user.setRating((double) Math.round((new Random().nextDouble(user.getProfit() / 10)) * 100) /100);
-        banks.forEach(bank -> bank.setCountUser(bank.getCountUser() + 1));
+        user.setRating((double) Math.round((new Random().nextDouble(user.getMonthlyProfit() / 10)) * 100) /100);
         return user;
     }
 

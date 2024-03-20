@@ -36,9 +36,9 @@ public class BankAtmServiceImpl implements BankAtmService {
                 .belongBank(belongBank)
                 .belongOffice(belongOffice)
                 .serviceEmployee(serviceEmployee)
-                .getMoney(getMoney)
-                .giveMoney(giveMoney)
-                .serviceMoney(serviceMoney)
+                .canAcceptMoney(getMoney)
+                .canGiveMoney(giveMoney)
+                .costForMaintenance(serviceMoney)
                 .address(belongOffice.getAddress())
                 .build();
         if (belongBank.getMoney() < money) throw new
@@ -47,8 +47,6 @@ public class BankAtmServiceImpl implements BankAtmService {
         if (!status.equals("Working") && !status.equals("Not working") && !status.equals("No money"))
             throw new IllegalArgumentException("Неверно указан статус");
         else bankAtm.setStatus(status);
-        belongBank.setCountAtm(belongBank.getCountAtm()+1);
-        belongOffice.setCountAtm(belongOffice.getCountAtm()+1);
         return bankAtm;
     }
 
