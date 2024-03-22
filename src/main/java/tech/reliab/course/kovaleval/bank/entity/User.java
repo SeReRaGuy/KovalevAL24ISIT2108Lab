@@ -33,9 +33,6 @@ public class User {
                 + "\nДата рождения клиента: " + dateOfBirth
                 + "\nМесто работы клиента: " + placeOfWork
                 + "\nПрибыль клиента: " + monthlyProfit
-                + "\nБанки, которыми пользуется клиент (id): " + getIdFromList(banks)
-                + "\nКредитные аккаунты, которыми пользуется клиент (id): " + getIdFromList(creditAccounts)
-                + "\nПлатёжные аккаунты, которыми пользуется клиент (id): " + getIdFromList(paymentAccounts)
                 + "\nКредитный рейтинг: " + rating;
     }
 
